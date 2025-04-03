@@ -3,7 +3,7 @@ const googleTrends = require('google-trends-api');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000; // Dynamic port for Render deployment
 
 app.use(cors());
 app.use(express.json());
@@ -29,6 +29,7 @@ app.post('/trends', async (req, res) => {
   }
 });
 
+// Start the server (Render-compatible)
 app.listen(PORT, () => {
-  console.log(`Google Trends API proxy running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
